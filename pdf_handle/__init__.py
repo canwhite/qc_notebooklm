@@ -1,0 +1,1 @@
+from .index import get_pdf_content

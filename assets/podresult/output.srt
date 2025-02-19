@@ -1,0 +1,404 @@
+1
+00:00:00,000 --> 00:00:02,880
+Well, right, welcome back, everyone.
+
+2
+00:00:02,880 --> 00:00:07,120
+Today we're dying, into something that has been absolutely revolutionary in the world
+
+3
+00:00:07,120 --> 00:00:09,480
+of natural language processing.
+
+4
+00:00:09,480 --> 00:00:15,400
+We had a poor talking about the skip-gram model, and its stensions, specifically the downpour,
+
+5
+00:00:15,400 --> 00:00:21,200
+excited to break it down for you, so let you fears that feel it up-yush from the future,
+
+6
+00:00:21,200 --> 00:00:24,400
+and is one of those papers that feels like it down from the future.
+
+7
+00:00:24,400 --> 00:00:26,400
+I've been excited.
+
+8
+00:00:26,400 --> 00:00:30,320
+Well, all the second distributed representations.
+
+9
+00:00:30,320 --> 00:00:32,160
+Like, what does that even mean?
+
+10
+00:00:32,160 --> 00:00:34,720
+Is this like words turning into numbers or something?
+
+11
+00:00:34,720 --> 00:00:35,720
+Exactly.
+
+12
+00:00:35,720 --> 00:00:40,960
+Distributed representations are essentially ways of encoding words, or phrases into vectors,
+
+13
+00:00:40,960 --> 00:00:43,800
+think of them as points in a high-dimensional space.
+
+14
+00:00:43,800 --> 00:00:48,600
+The magic is that these vectors capture not just the meaning of individual words, but
+
+15
+00:00:48,600 --> 00:00:50,920
+also the relationships between them.
+
+16
+00:00:50,920 --> 00:00:55,600
+Wait, wait, so you pop out car saying you can do math with words like...
+
+17
+00:00:55,600 --> 00:01:00,670
+King's minus man equals, queen that sounds like something out of a safe movie.
+
+18
+00:01:00,670 --> 00:01:02,390
+Is this for real?
+
+19
+00:01:02,390 --> 00:01:04,990
+It costs us, not just for real.
+
+20
+00:01:04,990 --> 00:01:08,460
+It has been proven to work incredibly well.
+
+21
+00:01:08,460 --> 00:01:12,980
+The skip-gram model, which is the focus of this paper, is designed to learn these high-quality
+
+22
+00:01:12,980 --> 00:01:18,060
+vector representations from large amounts of text data, and the cool part is, it's a
+
+23
+00:01:18,060 --> 00:01:23,060
+tort and it's a walk-tringing one, over for a billion words in just one day.
+
+24
+00:01:23,060 --> 00:01:25,940
+One day, Cotty is insane, so how does it work?
+
+25
+00:01:25,940 --> 00:01:29,300
+Like, what could I lose the secret sauce here?
+
+26
+00:01:29,300 --> 00:01:35,420
+Well, the skip-gram model is all about predicting the context words around a given word.
+
+27
+00:01:35,420 --> 00:01:40,620
+So if you have the sentence, I love eating ice cream, the model would try to predict words
+
+28
+00:01:40,620 --> 00:01:44,350
+like love, and the eating one given.
+
+29
+00:01:44,350 --> 00:01:46,070
+Why is the input?
+
+30
+00:01:46,070 --> 00:01:51,350
+Over time, this process helps the model learn these distributed representations, but capture.
+
+31
+00:01:51,350 --> 00:01:52,350
+OK.
+
+32
+00:01:52,350 --> 00:01:59,580
+But why is that better than, say, just using a dictionary where each word has a definition?
+
+33
+00:01:59,580 --> 00:02:03,670
+Like, what con was the advantage of turning words into vectors?
+
+34
+00:02:03,670 --> 00:02:04,670
+Great question.
+
+35
+00:02:04,670 --> 00:02:05,670
+Think about it this way.
+
+36
+00:02:05,670 --> 00:02:08,270
+A dictionary gives you a static definition, right?
+
+37
+00:02:08,270 --> 00:02:12,270
+But in real language, words don't fit, it exists in isolation.
+
+38
+00:02:12,270 --> 00:02:15,310
+They interact with each other in complex ways.
+
+39
+00:02:15,310 --> 00:02:19,030
+By turning words into vectors, we can capture those interactions.
+
+40
+00:02:19,030 --> 00:02:23,710
+For example, the word bank can mean a financial institution or the side of a river.
+
+41
+00:02:23,710 --> 00:02:26,950
+The context text in which it hunts used to mean it.
+
+42
+00:02:26,950 --> 00:02:28,470
+Use determines, it's meaning.
+
+43
+00:02:28,470 --> 00:02:33,870
+Oh, I get it now, so, it's like the model is learning the context around each word,
+
+44
+00:02:33,870 --> 00:02:36,670
+and that context is what gives the word its meaning.
+
+45
+00:02:36,670 --> 00:02:39,750
+But like, how does it actually learn these vectors?
+
+46
+00:02:39,750 --> 00:02:41,870
+Is it just guessing and checking?
+
+47
+00:02:41,870 --> 00:02:42,870
+Not quite.
+
+48
+00:02:42,870 --> 00:02:46,710
+The skip-gram model uses a technique called the softmax function to predict the probability
+
+49
+00:02:46,710 --> 00:02:49,870
+of a word appearing in a certain context.
+
+50
+00:02:49,870 --> 00:02:56,270
+But calculating this probability for every word in a large vocabulary is contitially expensive.
+
+51
+00:02:56,270 --> 00:03:02,470
+The old sails, where the paper introduces some clever tricks, like hierarchical softmax,
+
+52
+00:03:02,470 --> 00:03:04,270
+and more efficient.
+
+53
+00:03:04,270 --> 00:03:09,670
+If fast if lost your eggs, where the paper's head is passing, to make the process faster
+
+54
+00:03:09,670 --> 00:03:10,670
+and more efficient.
+
+55
+00:03:10,670 --> 00:03:12,110
+Negative sampling.
+
+56
+00:03:12,110 --> 00:03:15,790
+What kind goes that like sampling the wrong answers to make the model better?
+
+57
+00:03:15,790 --> 00:03:17,030
+Exactly.
+
+58
+00:03:17,030 --> 00:03:20,510
+Negative sampling is a way to simplify the training process.
+
+59
+00:03:20,510 --> 00:03:25,590
+Instead of trying to predict the probability of every word in the vocabulary, the model
+
+60
+00:03:25,590 --> 00:03:31,750
+focuses on a few negative examples, words that are unlikely to appear in the context.
+
+61
+00:03:31,750 --> 00:03:34,910
+And uses them to refine the vector representations.
+
+62
+00:03:34,910 --> 00:03:38,910
+It adds words like teaching a model to recognize what doesn't flinch through the...
+
+63
+00:03:38,910 --> 00:03:40,910
+The pulse looks pretty smart.
+
+64
+00:03:40,910 --> 00:03:43,510
+So does this work for phrases too?
+
+65
+00:03:43,510 --> 00:03:46,390
+Like, can you turn New York Times into a vector?
+
+66
+00:03:46,390 --> 00:03:47,390
+Absolutely.
+
+67
+00:03:47,390 --> 00:03:53,830
+In fact, the paper introduces a method for identifying phrases in text and treating them as single
+
+68
+00:03:53,830 --> 00:03:54,830
+tokens.
+
+69
+00:03:54,830 --> 00:04:01,590
+So, instead of just having vectors for New and York, and times, you can have a vector
+
+70
+00:04:01,590 --> 00:04:08,150
+for New York Times, that captures the meaning of the entire phrase.
+
+71
+00:04:08,150 --> 00:04:09,870
+This makes the model much more...
+
+72
+00:04:09,870 --> 00:04:14,550
+Although that calculus wilds are you called terror, saying the model can understand that
+
+73
+00:04:14,550 --> 00:04:17,300
+New York Times is a newspaper.
+
+74
+00:04:17,300 --> 00:04:20,820
+Not just a combination of the words New and Times.
+
+75
+00:04:20,820 --> 00:04:21,820
+Exactly.
+
+76
+00:04:21,820 --> 00:04:23,140
+And it gets even cooler.
+
+77
+00:04:23,140 --> 00:04:28,540
+The paper shows that these phrase vectors can be used to solve analogical reasoning tasks.
+
+78
+00:04:28,540 --> 00:04:32,980
+For example, if you have the phrase Montreal can again.
+
+79
+00:04:32,980 --> 00:04:39,620
+You can subtract Montreal and add Toronto to get something close to Toronto Maple Leafs.
+
+80
+00:04:39,620 --> 00:04:44,940
+But, basis, it believes like the model has learned a structure of language.
+
+81
+00:04:44,940 --> 00:04:47,370
+That forex mind-blowing.
+
+82
+00:04:47,370 --> 00:04:53,130
+So does this mean we, which year one step, closer to the other, understanding human language?
+
+83
+00:04:53,130 --> 00:04:55,810
+It code is a big step for sure.
+
+84
+00:04:55,810 --> 00:04:58,730
+But they are possible, still a lot of work to be done.
+
+85
+00:04:58,730 --> 00:05:02,170
+The skip-gram model is just one piece of the puzzle.
+
+86
+00:05:02,170 --> 00:05:07,930
+It fathomers, amazing at capturing relationships that real language understanding involves
+
+87
+00:05:07,930 --> 00:05:09,410
+much more than that.
+
+88
+00:05:09,410 --> 00:05:15,330
+Still, this paper is a huge leap forward in how we think about all representing and processing
+
+89
+00:05:15,330 --> 00:05:16,330
+language.
+
+90
+00:05:16,330 --> 00:05:17,330
+Alright.
+
+91
+00:05:17,330 --> 00:05:18,410
+It had been sold.
+
+92
+00:05:18,410 --> 00:05:22,210
+This is like the future of language processing, right?
+
+93
+00:05:22,210 --> 00:05:23,530
+Absolutely.
+
+94
+00:05:23,530 --> 00:05:25,010
+And the best part.
+
+95
+00:05:25,010 --> 00:05:28,090
+The techniques they introduce are not just theoretical.
+
+96
+00:05:28,090 --> 00:05:33,370
+They want cure, practical, efficient, and have already been applied in real-world systems.
+
+97
+00:05:33,370 --> 00:05:36,090
+This is the kind of research that changes the game.
+
+98
+00:05:36,090 --> 00:05:41,250
+While I can swap weight to see where this goes next, thanks for breaking it down.
+
+99
+00:05:41,250 --> 00:05:48,290
+My pleasure and remember, the future of language processing is all about understanding the relationships
+
+100
+00:05:48,290 --> 00:05:51,090
+between words and phrases.
+
+101
+00:05:51,090 --> 00:05:55,090
+Think of the hallways of fascinating journey, and we vol-o-o.
+

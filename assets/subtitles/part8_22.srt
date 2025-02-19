@@ -1,0 +1,8 @@
+1
+00:00:00,000 --> 00:00:05,280
+The bishop directed him through a hidden door into the church's interior, where a priest
+
+2
+00:00:05,280 --> 00:00:07,000
+led him to his destination.
+
